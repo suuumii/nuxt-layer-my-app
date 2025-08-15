@@ -17,7 +17,7 @@ Nuxt.js の Layers 機能で継承されるディレクトリ
 |components|○||
 |composables|○||
 |layouts|○||
-|middleware|||
+|middleware|○||
 |pages|○||
 |plugins|○||
 |utils|○||
