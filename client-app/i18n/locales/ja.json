@@ -1,0 +1,6 @@
+{
+    "label" : {
+        "mainTitle": "サンプルページタイトル（from client-app/locales/ja.json）",
+        "sampleText": "サンプルテキスト（from client-app/locales/ja.json）"
+    }
+}

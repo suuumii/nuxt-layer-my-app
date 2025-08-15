@@ -3,4 +3,10 @@ export default defineNuxtConfig({
   extends: [
     'client-base'
   ],
+  i18n: {
+    locales: [
+      { code: 'ja', language: 'ja-JP', name: 'Japanese', file: 'ja.json' },
+      { code: 'en', language: 'en-US', name: 'English', file: 'en.json' },
+    ],
+  },
 })

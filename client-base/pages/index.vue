@@ -4,7 +4,8 @@
 
 <template>
   <v-container>
-    <h3>サンプルページ</h3>
+    <h3>{{ $t("label.mainTitle") }}</h3>
+    <MoleculesMenu />
     <v-row>
       <v-col cols="10">
         <v-text-field label="テキスト" />

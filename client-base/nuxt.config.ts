@@ -13,6 +13,7 @@ export default defineNuxtConfig({
       })
     },
     '@nuxt/eslint',
+    '@nuxtjs/i18n',
   ],
   devtools: { enabled: true },
   build: {
@@ -25,5 +26,15 @@ export default defineNuxtConfig({
       },
     },
   },
+
   css: [join(currentDir, './assets/main.scss')],
+
+  i18n: {
+    strategy: 'prefix_except_default',
+    defaultLocale: 'ja',
+    locales: [
+      { code: 'ja', language: 'ja-JP', name: 'Japanese', file: 'ja.json' },
+      { code: 'en', language: 'en-US', name: 'English', file: 'en.json' },
+    ],
+  },
 })
