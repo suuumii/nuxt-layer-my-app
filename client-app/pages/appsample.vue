@@ -17,15 +17,33 @@
           </li>
         </ul>
       </div>
-  
       <div v-else>
         タスクデータが見つかりません
       </div>
+
+      <div v-if="pending2">読み込み中...</div>
+      <div v-else-if="error2" class="error">
+        エラーが発生しました: {{ error.message }}
+        </div>
+      <div v-else-if="books && books.length > 0">
+      <h2>書籍一覧</h2>
+      <ul>
+        <li v-for="book in books" :key="book.id">
+          <strong>{{ book.title }}</strong> - {{ book.author }}
+        </li>
+      </ul>
+    </div>
+
+    <div v-else>
+      書籍データが見つかりません
+    </div>
     </div>
   </template>
   
   <script setup>
   const { data: tasks, pending, error, refresh } = await useFetch('/tasks')
+
+  const { data: books, pending2, error2, refresh2 } = await useFetch('/books')
   
   // ページリフレッシュ時にもデータを再取得
   onMounted(() => {
