@@ -9,4 +9,10 @@ export default defineNuxtConfig({
       { code: 'en', language: 'en-US', name: 'English', file: 'en.json' },
     ],
   },
+
+  runtimeConfig: {
+    public: {
+      mswProvider: 'client-app'
+    }
+  },
 })

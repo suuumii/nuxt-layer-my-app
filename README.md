@@ -7,7 +7,7 @@
 
 
 # 詳細
-Nuxt.js の Layers 機能で継承されるディレクトリ
+## Nuxt.js の Layers 機能で継承されるディレクトリ
 
 - アプリ側 > レイヤー側の優先度で上書きされて使われる
   - 同じ名前のコンポーネントがあった場合はアプリ側が使われる
@@ -22,14 +22,19 @@ Nuxt.js の Layers 機能で継承されるディレクトリ
 |plugins|○||
 |utils|○||
 
-Nuxt.js の Layers 機能で継承されないディレクトリ
+## Nuxt.js の Layers 機能で継承されないディレクトリや機能
 
-|ディレクトリ名|継承可能かどうか|備考|
-|---|---|---|
-|i18b|○|アプリ側 > レイヤー側の優先度でマージされる|
-|assets|||
+### i18n
+nuxt-i18nを使うことでアプリ側 > レイヤー側の優先度でマージされる
 
-nuxt.config.ts の設定
+### MSW
+レイヤー側のmsw.client.tsと、アプリ側のhandler.tsの細工を行うことで継承可能。
+
+レイヤー側のmsw.client.tsはMockServiceWorkerの重複起動防止のために環境変数（nuxt.config.ts）を見てclient-baseでなかった場合は起動しないみたいなことを仕込む必要がある。
+
+アプリ側のhandler.ts側は、レイヤー側のhandler.tsをimportして結合する必要がある。（レイヤー側のpackgae.jsonでhandler.tsをexportしておく必要がある）
+
+## nuxt.config.ts の設定
 
 |設定名|継承可能かどうか|備考|
 |---|---|---|
